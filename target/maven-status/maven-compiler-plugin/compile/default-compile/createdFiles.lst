@@ -1,0 +1,5 @@
+cz/martin/models/VetAnimalsCount.class
+cz/martin/models/VetWithAnimals.class
+cz/martin/beans/FilterBean.class
+cz/martin/repositories/ZooRepository.class
+cz/martin/services/ZooService.class

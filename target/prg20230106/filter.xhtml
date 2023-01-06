@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="fragments/template.xhtml">
+   <ui:define name="content">
+      <h2>Pravidla</h2>
+      <h:form>
+         <div class="form-check form-switch">
+            <h:selectBooleanCheckbox value="#{filterBean.osetruje}" class="form-check-input" type="checkbox" id="oje" />
+            <label class="form-check-label" for="oje">Ošetřuje</label>
+         </div>
+         <div class="form-check form-switch">
+            <h:selectBooleanCheckbox value="#{filterBean.maRad}" class="form-check-input" type="checkbox" id="marad" />
+            <label class="form-check-label" for="marad">Má rád</label>
+         </div>
+         <h:commandButton value="Filter" />
+      </h:form>
+
+      <div>
+         <ui:repeat value="#{filterBean.vetWithAnimals}" var="vet">
+            <h3>#{vet.name} - #{vet.count}</h3>
+            <ul>
+               <ui:repeat value="#{vet.animals}" var="anim">
+                  <li>#{anim}</li>
+               </ui:repeat>
+            </ul>
+         </ui:repeat>
+      </div>
+   </ui:define>
+</ui:composition>
+</html>
